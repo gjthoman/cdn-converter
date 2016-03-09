@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
+    <style type="text/css">
+      h1 { text-align: center; }
+      form {
+        width: 50%;
+        min-width: 980px;
+        margin: 50px auto 0;
+        background: #DCDCDC;
+        border-radius: 1em;
+        padding: 2em;
+      }
+      hr { border-top: 1px dashed #FFF; }
+      ul { 
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+      }
+      li { margin: 4px 0; }
+      li i { 
+        margin-right: 1em; 
+        cursor: pointer;
+      }
+      .converted {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RS CDN URL Converter</h1>
+    <form>
+      <div class="form-group">
+        <label for="originalURL">Original URL(s)</label>
+        <span id="helpBlock" class="help-block">Each URL must be on a new line</span>
+          <textarea type="text" class="form-control" id="originalURL" placeholder="https://a248.e.akamai.net..."></textarea>
+
+          <br>
+          <button class="btn btn-primary" id='submit' type="submit" disabled="disabled">Convert URL(s)</button>
+      </div>
+      
+      <div class="converted">
+        <hr>
+        <div class="form-group">
+          <label for="output">Converted URL(s)</label>
+            <textarea class="form-control" id="hiddenOutput" readonly></textarea>
+            <br>
+            <button class="btn btn-success copy" data-clipboard-target="#hiddenOutput" type="button">Copy ALL to Clipboard</button>
+          </div>
+          <ul id="output" class="list-group"></ul>
+        </div>
+      </div>
+      
+    </form>
+
+    <script type="text/javascript">
+      (function($){
+        var urlMatcher = /^((http[s]?|ftp)?:?(\/\/)?(a248.e.akamai.net))\/\w\/\d{4}\/\d{5}\/\d\w\/(dramsey.download.akamai.com)\/\d{5}(\/daveramsey.com)?/gm;
+        var newCDN = "https://cdn.ramseysolutions.net";
+        new Clipboard('.copy');
+
+        $('form').on('submit', function(e){
+          e.preventDefault();
+          var originalURL = $('#originalURL').val();
+          var validURL = urlMatcher.test(originalURL);
+        
+          if (validURL) {
+            var newURL = originalURL.replace(urlMatcher, newCDN);
+            $('#hiddenOutput').val(newURL);
+            renderLines(newURL);
+            $('.converted').show(300);
+          } else {
+            showError();
+          }
+        });
+
+        $('#originalURL').on('keyup', function(){
+          var originalURL = $('#originalURL').val();
+          var validURL = urlMatcher.test(originalURL);
+        
+          if (validURL) {
+            $('#submit').prop('disabled', false);
+          } else {
+            $('#submit').prop('disabled', true);
+          }
+        });
+
+        renderLines = function(input) {
+          $('#output li').remove();
+          var lines = input.split('\n');
+          for(var i = 0;i < lines.length;i++){
+            var isValid = "list-group-item list-group-item-success";
+            if (lines[i].indexOf(newCDN) == -1) {
+              isValid = 'list-group-item list-group-item-danger';
+              console.log('false');
+            }
+            console.log('outside');
+            $('#output').append('<li class="' + isValid + '"><a class="copy" title="Copy" data-clipboard-text="'+lines[i]+'" type="button"><i class="glyphicon glyphicon-copy"></i></button><a target="_blank" href="'+lines[i]+'">'+lines[i]+'</a></li>');
+          }
+        }
+      })(jQuery);
+      
+      /*
+      cdn.ramseysolutions.net/media  =>  /23572/daveramsey.com/media
+      cdn.ramseysolutions.net/resources  =>  /23572/daveramsey.com/resources
+      cdn.ramseysolutions.net/npm  =>  /23572/npm
+      cdn.ramseysolutions.net/personality_bar  =>  /23572/personality_bar
+      cdn.ramseysolutions.net/image  =>  /23572/image
+      cdn.ramseysolutions.net/vendor   => /23572/vendor
+      cdn.ramseysolutions.net/force_download   => /23572/force_download
+      cdn.ramseysolutions.net/smart_kids_launchpad   => /23572/daveramsey.com/smart_kids_launchpad
+      cdn.ramseysolutions.net/html   => /23572/html
+      cdn.ramseysolutions.net/publishing   => /23572/publishing
+      cdn.ramseysolutions.net/extensions   => /23572/extensions
+      cdn.ramseysolutions.net/greatrecovery.com  =>  /23572/greatrecovery.com
+      cdn.ramseysolutions.net/jonacuff.com  =>  /23572/jonacuff.com
+      cdn.ramseysolutions.net/pdf  =>  /23572/pdf
+      cdn.ramseysolutions.net/video  =>  /23572/video
+      */
+      
+    </script>
+  </body>
+</html>
