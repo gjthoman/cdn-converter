@@ -1,0 +1,15 @@
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/media/apps/broadcast/tdrs/images/about-dave-pad-1x.png
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/resources/css/brand/legacy-journey/sneakpeek.css
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/npm/dr_theme/4.0.0/dr_theme.js
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/personality_bar/images/personalities_all.jpg
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/image/entreleadership/scraper.png
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/vendor/javascripts/jquery-2.1.4.min.js
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/force_download/smart_kids_launchpad/all_coloring_pages.pdf
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/daveramsey.com/smart_kids_launchpad/header_logo.png
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/html/mobile/geo-b.html
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/publishing/12_lessons_w_foundationsU_message.jpg
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/extensions/content-x-ray/content-x-ray.js
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/greatrecovery.com/img/lp_fpu_tgr_calltoactionbox_v3.jpg
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/jonacuff.com/blog/images/ad-featured-homepage.png
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/pdf/townhallforhope/banner_12x5.pdf
+https://a248.e.akamai.net/f/1611/26335/9h/dramsey.download.akamai.com/23572/video/smart_dollar/business_case_0700.mp4
